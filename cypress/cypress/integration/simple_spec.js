@@ -35,6 +35,8 @@ describe('Los estudiantes login exitoso', function() {
       cy.get('.Select-placeholder').click()
       cy.get('.Select-input').find('input[role="combobox"]').type("juan").wait('1000')
       cy.get('.Select-menu-outer').click()
+      cy.wait('1000')
+      cy.get('.materias').find('input[type="checkbox"]').check()
     })
 })
 
