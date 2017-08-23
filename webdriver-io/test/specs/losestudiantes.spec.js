@@ -22,29 +22,34 @@ describe('los estudiantes login', function() {
         browser.waitForVisible('#cuenta', 5000);
         browser.click('#cuenta')
     });
-});
 
-describe('Creacion de cuenta con usuario existente', function() {
-    it('should visit los estudiantes and failed at log in', function () {
+    it('Creacion de cuenta con usuario existente', function () {
+        //browser.init()
         browser.url('https://losestudiantes.co');
-        browser.click('button=Cerrar');
         browser.waitForVisible('button=Ingresar', 5000);
         browser.click('button=Ingresar');
 
-        var cajaLogIn = browser.element('.cajaLogIn');
-        var mailInput = cajaLogIn.element('input[name="correo"]');
+        var cajaSignUp = browser.element('.cajaSignUp');
+        var nombre = cajaSignUp.element('input[name="nombre"]');
+        var apellido = cajaSignUp.element('input[name="apellido"]');
+        var correo = cajaSignUp.element('input[name="correo"]');
+        var password = cajaSignUp.element('input[name="password"]');
 
-        mailInput.click();
-        mailInput.keys('cosmefulanitog88@gmail.com');
+        nombre.click();
+        nombre.keys('pruebas');
 
-        var passwordInput = cajaLogIn.element('input[name="password"]');
+        apellido.click();
+        apellido.keys('automaticas');
 
-        passwordInput.click();
-        passwordInput.keys('cosmefulanitog88');
+        correo.click();
+        correo.keys('cosmefulanitog88@gmail.com');
 
-        cajaLogIn.element('button=Ingresar').click()
+        password.click();
+        password.keys('cosmefulanitog88');
 
-        browser.waitForVisible('#cuenta', 5000);
-        browser.click('#cuenta')
+        browser.waitForVisible('button=Registrarse', 5000);
+        browser.click('button=Registrarse');
+
+        browser.getText('Ocurrió un error activando tu cuenta');
     });
 });
