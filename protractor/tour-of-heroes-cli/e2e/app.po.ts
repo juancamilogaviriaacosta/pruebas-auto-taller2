@@ -36,22 +36,28 @@ export class TourOfHeroesPage {
     element.all(by.css('.col-1-4')).first().click();
     element.all(by.css('.ng-pristine')).first().sendKeys(nombre);
     element(by.buttonText('Save')).click();
+    browser.waitForAngular();
     return this.getTop4Heroes();
   }
 
   navegarHeroeDashboard() {
     this.navigateTo();
     element.all(by.css('.col-1-4')).first().click();
+    browser.waitForAngular();
+    return element(by.buttonText('Save')).isPresent();
   }
 
   navegarDesdeListaHeroes() {
     this.navigateToHeroes();
     element.all(by.css('.heroes')).first().click();
     element(by.buttonText('View Details')).click();
+    return element(by.buttonText('Save')).isPresent();
   }
 
   navegarDesdeBusqueda() {
     this.navigateTo();
     element(by.id('search-box')).sendKeys('Narco');
+    element(by.css('.search-result')).click();
+    return element(by.buttonText('Save')).isPresent();
   }
 }

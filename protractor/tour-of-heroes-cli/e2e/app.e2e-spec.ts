@@ -17,32 +17,38 @@ describe('Tour of heroes Dashboard', () => {
     expect(page.getAllHeroes().count()).toBe(11);
   });
 
+  // PRUEBA 1 buscar heroes
   it('buscar heroes', () => {
     page.navigateTo();
     expect(page.buscarPorNombre('Narco')).toContain('Narco details!');
   });
 
+  // PRUEBA 2 eliminar heroe
   it('eliminar heroe', () => {
     page.navigateToHeroes();
     page.eliminarHeroe();
     expect(page.getAllHeroes().count()).toBe(10);
   });
 
+  // PRUEBA 3 editar heroe
   it('editar heroe', () => {
     page.navigateTo();
-    expect(page.editarHeroe('Mr. Juan')).toContain('Mr. Juan');
+    expect(page.editarHeroe('Juan')).toEqual([ 'Mr. NiceJuan', 'Narco', 'Bombasto', 'Celeritas' ]);
   });
 
+  // PRUEBA 4 navegar heroe desde dashboard
   it('navegar heroe desde dashboard', () => {
-    page.navegarHeroeDashboard();
+    expect(page.navegarHeroeDashboard()).toEqual(true);
   });
 
+  // PRUEBA 5 navegar heroe desde lista de heroes
   it('navegar heroe desde lista de heroes', () => {
-    page.navegarDesdeListaHeroes();
+    expect(page.navegarDesdeListaHeroes()).toEqual(true);
   });
 
+  // PRUEBA 6 navegar heroe desde la busqueda
   it('navegar heroe desde la busqueda', () => {
-    page.navegarDesdeBusqueda();
+    expect(page.navegarDesdeBusqueda()).toEqual(true);
   });
 });
 
