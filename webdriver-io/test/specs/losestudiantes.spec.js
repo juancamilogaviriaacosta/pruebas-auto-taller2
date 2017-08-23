@@ -21,11 +21,15 @@ describe('los estudiantes login', function() {
 
         browser.waitForVisible('#cuenta', 5000);
         browser.click('#cuenta')
+        browser.click('a=Salir')
     });
 
     it('Creacion de cuenta con usuario existente', function () {
-        //browser.init()
         browser.url('https://losestudiantes.co');
+        //var hayCerrar = browser.waitForExist('button=Cerrar', 5000)
+        //if(hayCerrar) {
+        //    browser.click('button=Cerrar');
+        //}
         browser.waitForVisible('button=Ingresar', 5000);
         browser.click('button=Ingresar');
 
@@ -50,6 +54,9 @@ describe('los estudiantes login', function() {
         browser.waitForVisible('button=Registrarse', 5000);
         browser.click('button=Registrarse');
 
-        browser.getText('Ocurrió un error activando tu cuenta');
+        browser.waitForVisible('.sweet-alert', 5000);
+        var alerta = browser.getText('.sweet-alert');
+        console.log(alerta);
+        expect(alerta).toContain('Ocurrió un error activando tu cuenta');
     });
 });
