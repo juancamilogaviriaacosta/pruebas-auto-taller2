@@ -4,6 +4,7 @@
 module.exports = { // adapted from: https://git.io/vodU0
   'Los estudiantes prueba busqueda profesor y filtro por materia': function(browser) {
     browser
+      .resizeWindow(1280, 1024)
       .url('https://losestudiantes.co/')
       .click('.botonCerrar')
       .click('.Select-placeholder')
