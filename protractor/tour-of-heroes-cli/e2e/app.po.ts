@@ -31,4 +31,11 @@ export class TourOfHeroesPage {
   eliminarHeroe() {
     element.all(by.css('.delete')).first().click();
   }
+
+  editarHeroe(nombre: string) {
+    element.all(by.css('.col-1-4')).first().click();
+    element.all(by.css('.ng-pristine')).first().sendKeys(nombre);
+    element(by.buttonText('Save')).click();
+    return this.getTop4Heroes();
+  }
 }

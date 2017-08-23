@@ -27,6 +27,11 @@ describe('Tour of heroes Dashboard', () => {
     page.eliminarHeroe();
     expect(page.getAllHeroes().count()).toBe(10);
   });
+
+  it('editar heroe', () => {
+    page.navigateTo();
+    expect(page.editarHeroe('Mr. Juan')).toContain('Mr. Juan');
+  });
 });
 
 describe('Tour of heroes, heroes page', () => {
