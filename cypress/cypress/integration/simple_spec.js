@@ -1,3 +1,4 @@
+//PRUEBA 1
 describe('Los estudiantes login exitoso', function() {
     it('Los estudiantes login exitoso', function() {
       cy.visit('https://losestudiantes.co')
@@ -10,6 +11,7 @@ describe('Los estudiantes login exitoso', function() {
     })
 })
 
+//PRUEBA 2
 describe('Creacion de cuenta con usuario existente', function() {
     it('Creacion de cuenta con usuario existente', function() {
       cy.visit('https://losestudiantes.co')
@@ -24,6 +26,7 @@ describe('Creacion de cuenta con usuario existente', function() {
     })
 })
 
+//PRUEBA 3 y 4
 describe('Busqueda profesor y filtro por materia', function() {
     it('Busqueda profesor y filtro por materia', function() {
       cy.visit('https://losestudiantes.co')
