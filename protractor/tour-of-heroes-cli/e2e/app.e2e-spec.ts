@@ -21,6 +21,12 @@ describe('Tour of heroes Dashboard', () => {
     page.navigateTo();
     expect(page.buscarPorNombre('Narco')).toContain('Narco details!');
   });
+
+  it('eliminar heroe', () => {
+    page.navigateToHeroes();
+    page.eliminarHeroe();
+    expect(page.getAllHeroes().count()).toBe(10);
+  });
 });
 
 describe('Tour of heroes, heroes page', () => {

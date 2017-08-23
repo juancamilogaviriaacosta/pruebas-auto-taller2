@@ -27,4 +27,8 @@ export class TourOfHeroesPage {
     element(by.css('.search-result')).click();
     return element.all(by.tagName('h2')).getText();
   }
+
+  eliminarHeroe() {
+    element.all(by.css('.delete')).first().click();
+  }
 }
