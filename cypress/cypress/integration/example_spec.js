@@ -1,3 +1,5 @@
+
+/*
 //
 // **** Kitchen Sink Tests ****
 //
@@ -1684,3 +1686,4 @@ describe('Kitchen Sink', function(){
     })
   })
 })
+*/

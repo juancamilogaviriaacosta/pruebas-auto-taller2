@@ -10,17 +10,16 @@ describe('los estudiantes login', function() {
         var mailInput = cajaLogIn.element('input[name="correo"]');
 
         mailInput.click();
-        mailInput.keys('wrongemail@example.com');
+        mailInput.keys('cosmefulanitog88@gmail.com');
 
         var passwordInput = cajaLogIn.element('input[name="password"]');
 
         passwordInput.click();
-        passwordInput.keys('1234');
+        passwordInput.keys('cosmefulanitog88');
 
         cajaLogIn.element('button=Ingresar').click()
-        browser.waitForVisible('.aviso.alert.alert-danger', 5000);
 
-        var alertText = browser.element('.aviso.alert.alert-danger').getText();
-        expect(alertText).toBe('Upss! El correo y la contraseña que ingresaste no figuran en la base de datos. Intenta de nuevo por favor.');
+        browser.waitForVisible('#cuenta', 5000);
+        browser.click('#cuenta')
     });
 });
