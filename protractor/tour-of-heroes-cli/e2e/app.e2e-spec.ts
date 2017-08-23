@@ -17,7 +17,7 @@ describe('Tour of heroes Dashboard', () => {
     expect(page.getAllHeroes().count()).toBe(11);
   });
 
-  it('debe buscar por nombre', () => {
+  it('buscar heroes', () => {
     page.navigateTo();
     expect(page.buscarPorNombre('Narco')).toContain('Narco details!');
   });
@@ -31,6 +31,18 @@ describe('Tour of heroes Dashboard', () => {
   it('editar heroe', () => {
     page.navigateTo();
     expect(page.editarHeroe('Mr. Juan')).toContain('Mr. Juan');
+  });
+
+  it('navegar heroe desde dashboard', () => {
+    page.navegarHeroeDashboard();
+  });
+
+  it('navegar heroe desde lista de heroes', () => {
+    page.navegarDesdeListaHeroes();
+  });
+
+  it('navegar heroe desde la busqueda', () => {
+    page.navegarDesdeBusqueda();
   });
 });
 
