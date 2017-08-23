@@ -1,5 +1,7 @@
 var assert = require('assert');
 describe('los estudiantes login', function() {
+
+    //Prueba 1
     it('should visit los estudiantes and failed at log in', function () {
         browser.url('https://losestudiantes.co');
         browser.click('button=Cerrar');
@@ -24,6 +26,7 @@ describe('los estudiantes login', function() {
         browser.click('a=Salir')
     });
 
+    //Prueba 2
     it('Creacion de cuenta con usuario existente', function () {
         browser.url('https://losestudiantes.co');
         //var hayCerrar = browser.waitForExist('button=Cerrar', 5000)
