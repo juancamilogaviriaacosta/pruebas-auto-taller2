@@ -1,4 +1,4 @@
-//PRUEBA 1
+//PRUEBA 1 login exitoso
 describe('Los estudiantes login exitoso', function() {
     it('Los estudiantes login exitoso', function() {
       cy.visit('https://losestudiantes.co')
@@ -11,7 +11,7 @@ describe('Los estudiantes login exitoso', function() {
     })
 })
 
-//PRUEBA 2
+//PRUEBA 2 creacion de usuario con usuario existente
 describe('Creacion de cuenta con usuario existente', function() {
     it('Creacion de cuenta con usuario existente', function() {
       cy.visit('https://losestudiantes.co')
@@ -26,15 +26,16 @@ describe('Creacion de cuenta con usuario existente', function() {
     })
 })
 
-//PRUEBA 3 y 4
+//PRUEBA 3 Busqueda por profesor
+//PRUEBA 4 Filtro por materia del profesor
 describe('Busqueda profesor y filtro por materia', function() {
     it('Busqueda profesor y filtro por materia', function() {
       cy.visit('https://losestudiantes.co')
       cy.contains('Cerrar').click()
       cy.get('.Select-placeholder').click()
-      cy.get('.Select-input').find('input[role="combobox"]').type("juan").wait('1000')
+      cy.get('.Select-input').find('input[role="combobox"]').type("juan").wait('10000')
       cy.get('.Select-menu-outer').click()
-      cy.wait('1000')
+      cy.wait('10000')
       cy.get('.materias').find('input[type="checkbox"]').check()
     })
 })

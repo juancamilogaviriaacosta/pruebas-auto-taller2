@@ -1,11 +1,11 @@
 var assert = require('assert');
 describe('los estudiantes login', function() {
 
-    //Prueba 1
+    //PRUEBA 1 login exitoso
     it('should visit los estudiantes and failed at log in', function () {
         browser.url('https://losestudiantes.co');
         browser.click('button=Cerrar');
-        browser.waitForVisible('button=Ingresar', 5000);
+        browser.waitForVisible('button=Ingresar', 10000);
         browser.click('button=Ingresar');
 
         var cajaLogIn = browser.element('.cajaLogIn');
@@ -21,19 +21,19 @@ describe('los estudiantes login', function() {
 
         cajaLogIn.element('button=Ingresar').click()
 
-        browser.waitForVisible('#cuenta', 5000);
+        browser.waitForVisible('#cuenta', 10000);
         browser.click('#cuenta')
         browser.click('a=Salir')
     });
 
-    //Prueba 2
+    //PRUEBA 2 creacion de usuario con usuario existente
     it('Creacion de cuenta con usuario existente', function () {
         browser.url('https://losestudiantes.co');
-        //var hayCerrar = browser.waitForExist('button=Cerrar', 5000)
+        //var hayCerrar = browser.waitForExist('button=Cerrar', 10000)
         //if(hayCerrar) {
         //    browser.click('button=Cerrar');
         //}
-        browser.waitForVisible('button=Ingresar', 5000);
+        browser.waitForVisible('button=Ingresar', 10000);
         browser.click('button=Ingresar');
 
         var cajaSignUp = browser.element('.cajaSignUp');
@@ -54,10 +54,10 @@ describe('los estudiantes login', function() {
         password.click();
         password.keys('cosmefulanitog88');
 
-        browser.waitForVisible('button=Registrarse', 5000);
+        browser.waitForVisible('button=Registrarse', 10000);
         browser.click('button=Registrarse');
 
-        browser.waitForVisible('.sweet-alert', 5000);
+        browser.waitForVisible('.sweet-alert', 10000);
         var alerta = browser.getText('.sweet-alert');
         console.log(alerta);
         expect(alerta).toContain('Ocurrió un error activando tu cuenta');

@@ -1,5 +1,6 @@
 
-//Pruebas 3 y 4
+//PRUEBA 3 Busqueda por profesor
+//PRUEBA 4 Filtro por materia del profesor
 module.exports = { // adapted from: https://git.io/vodU0
   'Los estudiantes prueba busqueda profesor y filtro por materia': function(browser) {
     browser
@@ -12,8 +13,6 @@ module.exports = { // adapted from: https://git.io/vodU0
       .waitForElementVisible('.Select-option', 10000)
       .click('.Select-option')
       .waitForElementVisible('.materias', 10000)
-      //.check('.materias input[type="checkbox"]')
-      //.assert.containsText('.aviso.alert.alert-danger', 'El correo y la contraseña que ingresaste no figuran')
       .end();
   }
 };
