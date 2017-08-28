@@ -5,9 +5,9 @@
 
   <testsuite name="archivo"
     errors="0" failures="0" hostname="" id="" package="archivo" skipped="0"
-    tests="1" time="4.922" timestamp="Wed, 23 Aug 2017 19:55:10 GMT">
+    tests="1" time="5.329" timestamp="Mon, 28 Aug 2017 03:35:29 GMT">
   
-    <testcase name="Los estudiantes prueba busqueda profesor y filtro por materia" classname="archivo" time="4.922" assertions="4">
+    <testcase name="Los estudiantes prueba busqueda profesor y filtro por materia" classname="archivo" time="5.329" assertions="4">
 
     
 
